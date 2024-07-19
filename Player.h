@@ -4,6 +4,7 @@
 #include "Novice.h"
 #include "Input.h"
 #include <vector>
+#include <imgui.h>
 
 class Player :public Character
 {
@@ -16,5 +17,6 @@ public:
 	void Draw()override;
 
 	void MoveControl();
+	void ShootControl();
 };
 
