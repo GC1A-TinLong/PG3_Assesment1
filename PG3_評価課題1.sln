@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PG3_評価課題1", "PG3_評価課題1.vcxproj", "{8F370C5E-CAF5-4432-8DD0-75256335E6B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F370C5E-CAF5-4432-8DD0-75256335E6B3}.Debug|x64.ActiveCfg = Debug|x64
+		{8F370C5E-CAF5-4432-8DD0-75256335E6B3}.Debug|x64.Build.0 = Debug|x64
+		{8F370C5E-CAF5-4432-8DD0-75256335E6B3}.Release|x64.ActiveCfg = Release|x64
+		{8F370C5E-CAF5-4432-8DD0-75256335E6B3}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25AA0A58-F992-498A-AA8D-CE45D6DD586C}
+	EndGlobalSection
+EndGlobal
