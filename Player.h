@@ -3,11 +3,12 @@
 #include "Character.h"
 #include "Novice.h"
 #include "Input.h"
+#include <vector>
 
 class Player :public Character
 {
 private:
-
+	std::vector<float*>bullets_;
 
 public:
 	void Initialize(Vector2& pos, float speed, int radius, uint32_t color)override;
