@@ -5,13 +5,19 @@
 #include "Input.h"
 #include <vector>
 #include <imgui.h>
+#include "Bullet.h"
+#include <list>
 
 class Player :public Character
 {
 private:
-	std::vector<float*>bullets_;
+	static inline const int32_t kBulletNum = 20;
+	std::list<Bullet*>bullets_;
 
 public:
+	Player();
+	~Player();
+
 	void Initialize(Vector2& pos, float speed, int radius, uint32_t color)override;
 	void Update()override;
 	void Draw()override;

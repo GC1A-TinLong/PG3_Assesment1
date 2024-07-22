@@ -13,7 +13,7 @@ protected:
 	bool isShot = false;
 
 public:
-	virtual void Initialize(Vector2& pos, float speed, int radius, uint32_t color_) = 0;
+	virtual void Initialize(Vector2& pos, float speed, int radius, uint32_t color) = 0;
 	virtual void Update() = 0;
 	virtual void Draw() = 0;
 };
