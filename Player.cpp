@@ -20,7 +20,7 @@ void Player::Initialize(Vector2& pos, float speed, int radius, uint32_t color)
 	color_ = color;
 
 	bullets_.resize(kBulletNum);
-	for (auto& bullets : bullets_) {
+	for (auto& bullets : bullets_) {	// "&" <- 参照だけ本体に影響与えられる
 		Vector2 bulletPos = { -1000.0f,0 };
 		bullets = new Bullet;
 		bullets->Initialize(bulletPos, 20.0f, 10, RED);
