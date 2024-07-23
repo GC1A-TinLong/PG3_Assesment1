@@ -85,6 +85,7 @@ void Player::ShootControl()
 	if (isShot) {
 		for (auto* bullets : bullets_) {
 			bullets->SetIsShot(true);
+			break;
 		}
 	}
 	for (auto* bullets : bullets_) {
