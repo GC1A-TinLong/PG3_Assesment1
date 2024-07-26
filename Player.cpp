@@ -18,6 +18,7 @@ void Player::Initialize(Vector2& pos, float speed, int radius, uint32_t color)
 	speed_ = speed;
 	radius_ = radius;
 	color_ = color;
+	isShot = false;
 
 	bullets_.resize(kBulletNum);
 	for (auto& bullets : bullets_) {	// "&" <- 参照だけ本体に影響与えられる
@@ -70,27 +71,33 @@ void Player::MoveControl()
 
 void Player::ShootControl()
 {
-	if(Input::GetInstance()->TriggerKey(DIK_SPACE)){
+	if (Input::GetInstance()->PushKey(DIK_SPACE) && bulletBreak == false) {
+		bulletBreak = true;
 		for (auto* bullets : bullets_) {
-			bullets->Initialize(pos_, 20.0f, 10, RED);
+			if (bullets->GetIsShot() == false) {
+				bullets->Initialize(pos_, 20.0f, 10, RED);
+			}
+		}
+
+		for (auto* bullets : bullets_) {
+			if (bulletBreak && kBulletCD == 0) {
+				bullets->SetIsShot(true);
+				break;
+			}
 		}
 	}
-	if (Input::GetInstance()->PushKey(DIK_SPACE)) {
-		isShot = true;
-	}
-	else if (Input::GetInstance()->TriggerKey(DIK_SPACE) == false) {
-		isShot = false;
+	else if (bulletBreak) {
+		kBulletCD++;
+		if (kBulletCD >= 4) {
+			kBulletCD = 0;
+			bulletBreak = false;
+		}
 	}
 
-	if (isShot) {
-		for (auto* bullets : bullets_) {
-			bullets->SetIsShot(true);
-			break;
-		}
-	}
 	for (auto* bullets : bullets_) {
-		if (bullets->GetIsShot()) {
-			bullets->Update();
-		}
+		/*if (bullets->GetIsShot() == false) {
+			bullets->Initialize(pos_, 20.0f, 10, RED);
+		}*/
+		bullets->Update();
 	}
 }

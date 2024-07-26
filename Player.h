@@ -14,6 +14,9 @@ private:
 	static inline const int32_t kBulletNum = 20;
 	std::list<Bullet*>bullets_;
 
+	bool bulletBreak = false;
+	int kBulletCD = 0;
+
 public:
 	Player();
 	~Player();
@@ -21,6 +24,8 @@ public:
 	void Initialize(Vector2& pos, float speed, int radius, uint32_t color)override;
 	void Update()override;
 	void Draw()override;
+
+	const Vector2 GetPos()const { return pos_; }
 
 	void MoveControl();
 	void ShootControl();

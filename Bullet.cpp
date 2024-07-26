@@ -20,5 +20,7 @@ void Bullet::Update()
 
 void Bullet::Draw()
 {
-	Novice::DrawEllipse(int(pos_.x), int(pos_.y), radius_, radius_, 0, color_, kFillModeSolid);
+	if (isShot_) {
+		Novice::DrawEllipse(int(pos_.x), int(pos_.y), radius_, radius_, 0, color_, kFillModeSolid);
+	}
 }
