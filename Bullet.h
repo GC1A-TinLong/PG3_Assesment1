@@ -18,6 +18,8 @@ public:
 	void Update();
 	void Draw();
 
+	void IsCollide(Vector2& pos, int radius);
+
 	const bool GetIsShot() const { return isShot_; }
 
 	void SetIsShot(bool boolean) { isShot_ = boolean; }

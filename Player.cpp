@@ -26,14 +26,6 @@ void Player::Initialize(Vector2& pos, float speed, int radius, uint32_t color)
 		bullets = new Bullet;
 		bullets->Initialize(bulletPos, 20.0f, 10, RED);
 	}
-
-	//for (int32_t i = 0; i < kBulletNum; i++) {
-	//	Vector2 bulletPos = { -1000.0f,0 };
-	//	Bullet* bullets = new Bullet;
-	//	bullets->Initialize(bulletPos, 20.0f, 10, RED);
-
-	//	bullets_.push_back(bullets);	// adding the value to the last of the list
-	//}
 }
 
 void Player::Update()
@@ -47,9 +39,7 @@ void Player::Draw()
 	Novice::DrawEllipse(int(pos_.x), int(pos_.y), radius_, radius_, 0, color_, kFillModeSolid);
 
 	for (auto* bullets : bullets_) {
-		if (bullets->GetIsShot()) {
-			bullets->Draw();
-		}
+		bullets->Draw();
 	}
 }
 
@@ -95,9 +85,6 @@ void Player::ShootControl()
 	}
 
 	for (auto* bullets : bullets_) {
-		/*if (bullets->GetIsShot() == false) {
-			bullets->Initialize(pos_, 20.0f, 10, RED);
-		}*/
 		bullets->Update();
 	}
 }
