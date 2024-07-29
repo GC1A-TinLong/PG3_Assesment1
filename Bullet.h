@@ -18,7 +18,7 @@ public:
 	void Update();
 	void Draw();
 
-	void IsCollide(Vector2& pos, int radius);
+	//void IsCollide(Vector2& pos, int radius);
 
 	const bool GetIsShot() const { return isShot_; }
 

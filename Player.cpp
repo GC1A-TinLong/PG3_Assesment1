@@ -64,14 +64,14 @@ void Player::ShootControl()
 	if (Input::GetInstance()->PushKey(DIK_SPACE) && bulletBreak == false) {
 		bulletBreak = true;
 		for (auto* bullets : bullets_) {
-			if (bullets->GetIsShot() == false) {
+			if (!bullets->GetIsShot()) {
 				bullets->Initialize(pos_, 20.0f, 10, RED);
 			}
 		}
 
 		for (auto* bullets : bullets_) {
-			if (bulletBreak && kBulletCD == 0) {
-				bullets->SetIsShot(true);
+			if (!bullets->GetIsShot() && kBulletCD == 0) {
+ 				bullets->SetIsShot(true);
 				break;
 			}
 		}
